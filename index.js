@@ -4,6 +4,7 @@ const morgan = require("morgan")
 //routing import
 const authRouter = require("../server/routes/auth-routes");
 const handleError = require("./middlewares/error");
+const userRouter = require("../server/routes/user.routes")
 
 const app = express();
 //middleware
@@ -14,6 +15,7 @@ app.use(express.json()) // For read json
 
 //routing 
 app.use("/api", authRouter)
+app.use("/api", userRouter)
 // handle 
 app.use(handleError)
 
